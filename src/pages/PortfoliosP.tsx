@@ -19,6 +19,7 @@ import { useForm } from "antd/es/form/Form";
 // import { RcFile, UploadChangeParam, UploadFile } from "antd/es/upload";
 import { getImage } from "../utils/getImage";
 import TextArea from "antd/es/input/TextArea";
+import { AnyObject } from "antd/es/_util/type";
 
 interface DataSourceItem {
   name: string;
@@ -164,7 +165,7 @@ const PortfoliosP = () => {
     }
   };
 
-  const handleChange = async (e) => {
+  const handleChange = async (e:AnyObject) => {
     try {
       const formData = new FormData();
       formData.append("file", e.file.originFileObj);

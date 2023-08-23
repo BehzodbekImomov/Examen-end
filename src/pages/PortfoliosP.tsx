@@ -30,12 +30,16 @@ interface DataSourceItem {
   values?: string | undefined;
   key?: string | undefined;
 }
+interface Photo {
+  _id: string; 
+  name:string
+}
 
 const PortfoliosP = () => {
   const id = Cookies.get(ID);
   const [exp, setExp] = useState([] as DataSourceItem[]);
   const [selected, setSelected] = useState<string | null>(null);
-  const [photo, setPhoto] = useState(null);
+  const [photo, setPhoto] = useState<Photo|null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [form] = useForm();
@@ -90,7 +94,7 @@ const PortfoliosP = () => {
   const handleOk = async (): Promise<void> => {
     try {
       const values = await form.validateFields();
-      values.photo = photo?._id;
+      values.photo = (photo as Photo)?._id;
       console.log(values);
 
       if (selected) {

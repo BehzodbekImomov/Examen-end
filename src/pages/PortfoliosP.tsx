@@ -24,7 +24,6 @@ import { AnyObject } from "antd/es/_util/type";
 interface DataSourceItem {
   name: string;
   url: string;
-  photo: {_id:string,name:string};
   description: string;
   _id?: string | undefined;
   values?: string | undefined;
@@ -94,7 +93,7 @@ const PortfoliosP = () => {
   const handleOk = async (): Promise<void> => {
     try {
       const values = await form.validateFields();
-      values.photo = (photo as Photo)?._id;
+      values.photo = photo?._id;
       console.log(values);
 
       if (selected) {

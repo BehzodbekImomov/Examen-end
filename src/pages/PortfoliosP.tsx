@@ -89,7 +89,7 @@ const PortfoliosP = () => {
 
   const handleOk = async (): Promise<void> => {
     try {
-      let values = await form.validateFields();
+      const values = await form.validateFields();
       values.photo = photo?._id;
       console.log(values);
 

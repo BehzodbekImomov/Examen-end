@@ -5,6 +5,7 @@ import { ID } from "../constants";
 import Cookies from "js-cookie";
 
 interface DataSourceItem {
+  key: string|undefined; 
   name: string;
   percent: string;
   _id?: string;

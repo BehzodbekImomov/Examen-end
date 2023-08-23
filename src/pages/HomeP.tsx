@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import AboutP from "./AboutP";
 
 import "./page.scss";
 import { useCallback, useEffect, useState } from "react";
@@ -30,20 +29,18 @@ type FieldType = {
 };
 
 const HomeP = () => {
-  const [loading, setLoading] = useState(false);
-  const [user, setUser] = useState<FieldType>("");
+ const [user, setUser] = useState<FieldType | null>(null);
+
+
   const getData = useCallback(async () => {
     try {
-      setLoading(true);
       const response = await request.get<FieldType>("auth/me");
       const data = response.data;
 
       setUser(data);
     } catch (error) {
       console.error(error);
-    } finally {
-      setLoading(false);
-    }
+    } 
   }, []);
 
   useEffect(() => {
@@ -55,30 +52,30 @@ const HomeP = () => {
       <section className="home container" id="home">
         <div className="home-content ">
           <h3>Hello, It's Me</h3>
-          <h1>{user?.firstName+ " "+user.lastName}</h1>
+          <h1>{user?.firstName+ " "+user?.lastName}</h1>
           <h3>
             And I'm a <span>Fronted Developer</span>
           </h3>
           <p>
-           {user.info}
+           {user?.info}
           </p>
           <div className="social-media">
-            <Link to={user.facebook}>
+            <a href={user?.facebook}>
               <i className="bx bxl-facebook"></i>
-            </Link>
-            <Link to={user.youtube}>
+            </a>
+            <a href={user?.youtube}>
               <i className="bx bxl-twitter"></i>
-            </Link>
-            <Link to={user.telegram}>
+            </a>
+            <a href={user?.telegram}>
               <i className="bx bxl-telegram"></i>
-            </Link>
-            <Link to={user.instagram}>
+            </a>
+            <a href={user?.instagram}>
               <i className="bx bxl-instagram-alt"></i>
-            </Link>
+            </a>
           </div>
-          <Link className="btn" to="#">
+          <a className="btn" href="#">
             Download CV
-          </Link>
+          </a>
         </div>
         <div className="home-img img-fluid">
           <img src="/public/user.jpg" alt="" />
@@ -92,7 +89,7 @@ const HomeP = () => {
         <div className="about-content">
             <h2 className="heading">About <span>Me</span></h2>
             <h3>Frontend Devoloper</h3>
-            <p>L{user.info}</p>
+            <p>{user?.info}</p>
             <Link className="btn" to="/about">Read more</Link>
         </div>
       </section>

@@ -7,7 +7,6 @@ import {
   Modal,
   Table,
   Upload,
-  UploadProps,
   message,
 } from "antd";
 import { ColumnsType } from "antd/es/table";
@@ -24,7 +23,7 @@ import TextArea from "antd/es/input/TextArea";
 interface DataSourceItem {
   name: string;
   url: string;
-  photo: string;
+  photo: {_id:string,name:string};
   description: string;
   _id?: string | undefined;
   values?: string | undefined;
@@ -35,7 +34,7 @@ const PortfoliosP = () => {
   const id = Cookies.get(ID);
   const [exp, setExp] = useState([] as DataSourceItem[]);
   const [selected, setSelected] = useState<string | null>(null);
-  const [photo, setPhoto] = useState<string|null>(null);
+  const [photo, setPhoto] = useState(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [form] = useForm();
@@ -165,7 +164,7 @@ const PortfoliosP = () => {
     }
   };
 
-  const handleChange: UploadProps["onChange"] = async (e) => {
+  const handleChange = async (e) => {
     try {
       const formData = new FormData();
       formData.append("file", e.file.originFileObj);

@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  font-family: "Poppins",sans-serif;
+}
+
+:root{
+  --bg-color:#1f242d;
+  --second-bg-color:#323946;
+  --text-color:#fff;
+  --main-color:#0ef;
+}
+
+html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+
+}
+body{
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+.ant-layout-sider {
+  height: 100vh;
+}
+
+.ant-layout-content {
+  margin: 0 !important;
+  height: calc(100vh - 64px);
+  overflow: scroll;
+}
+section{
+  min-height: 100vh;
+  padding: 10rem 9% 2rem;
+}
+.container1{
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.menu{
+  margin-top: 100px;
+}
+.menu li:active{
+background: #0ef;
+color: #fff;
+}
+.menu li:hover{
+background: #0ef;
+color: #fff;
+}
+.btn_message{
+  margin-left: 1200px;
+}
+.btn_menu{
+  position: absolute;
+  left: 200px;
+}
+.btn_menu span{
+  color: #0ef;
+  text-shadow: 0 0 50px #0ef;
+}
+.userId{
+  position: absolute;
+  z-index: 100;
+  left: 112rem;
+  color: #0ef;
+  text-shadow: 0 0 50px #0ef;
+}
+.message_num{
+  position: absolute;
+  font-size: 15px;
+  color: #0ef;
+  font-weight: 800;
+  top: 0px;
+  left: 40px;
+}
+
+
+
+
+
+
+@media (max-width:1200px){
+  html{
+    font-size: 55%;
+  }
+
+}
+
+@media (max-width:991px){
+ .header{
+  padding: 2rem 3%;
+ }
+ section{
+  padding: 10rem 3% 2rem;
+ }
+ .footer{
+  padding: 2rem 3%;
+ }
+ /* .navbar{
+  display: none;
+} */
+}
+
+
+
+@media (max-width:768px){
+.nav_toggler{
+  display: block;
+}
+.navbar{
+  position: fixed;
+  top: 10vh;
+  right: 0;
+  width: 50%;
+  background: var(--bg-color);
+  border-top: .1rem solid rgba(0,0, 0, .2);
+  box-shadow: 0 .5rem 1rem rgba(0,0, 0, .2);
+ display: flex;
+ flex-direction: column;
+ transform: translateX(100%);
+ transition: .5s ease-in;
+}
+.navbar a{
+  display: block;
+  font-size: 2rem;
+  margin: 3rem;
+}
+.header{
+  justify-content: center;
+}
+.home{
+  flex-direction: column-reverse;
+  justify-content: center;
+  
+}
+
+.home .home-content h1{
+font-size: 5rem;
+}
+
+
+.about{
+  flex-direction: column;
+}
+
+.portfolio-container{
+  grid-template-columns: repeat(1,1fr);
+}
+}
+
+
+
+.nav_active{
+  transform: translateX(0);
+ 
+}
+
+.toggle .line1{
+  transform:rotate(-45deg)translate(-4px, 5px);
+}
+.toggle .line2{
+  opacity: 0;
+}
+.toggle .line3{
+  transform: rotate(45deg) translate(-3px,-4px);
+}

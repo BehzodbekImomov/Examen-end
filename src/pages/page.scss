@@ -1,0 +1,768 @@
+.authorization {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  .wrapper.active .form-wrapper.sign-in {
+    transform: translateY(-550px);
+  }
+  .wrapper .form-wrapper.sign-up {
+    position: absolute;
+    top: 550px;
+    left: 0;
+  }
+  .wrapper.active .form-wrapper.sign-up {
+    transform: translateY(-550px);
+  }
+  .wrapper {
+    position: relative;
+    width: 400px;
+    height: 550px;
+    background-color: #000;
+    box-shadow: 0 0 50px #0ef;
+    border-radius: 20px;
+    padding: 40px;
+    overflow: hidden;
+    &:hover {
+      animation: animate 1s linear infinite;
+    }
+    .form-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      transition: 1s ease-in-out;
+
+      h2 {
+        text-align: center;
+        font-size: 30px;
+        color: #fff;
+      }
+      .input-group {
+        position: relative;
+        border-bottom: 2px solid #fff;
+        margin: 30px 0;
+        label {
+          position: absolute;
+          top: 50%;
+          left: 5px;
+          transform: translateY(-50%);
+          font-size: 16px;
+          color: #fff;
+          pointer-events: none;
+        }
+        input {
+          width: 320px;
+          height: 40px;
+          font-size: 16px;
+          color: #fff;
+          padding: 0 5px;
+          background: transparent;
+          border: none;
+          outline: none;
+        }
+      }
+      .input-group input:focus ~ label,
+      .input-group input:valid ~ label {
+        top: -5px;
+        transition: 0.5s;
+      }
+
+      .remember {
+        margin: -5px 0 15px 5px;
+        .label {
+          color: #fff;
+          font-size: 14px;
+        }
+        input {
+          accent-color: #0ef;
+          margin-right: 5px;
+        }
+      }
+      button {
+        position: relative;
+        width: 100%;
+        height: 40px;
+        background: #0ef;
+        box-shadow: 0 0 10 #0ef;
+        font-size: 16px;
+        color: #000;
+        font-weight: 500;
+        cursor: pointer;
+        border-radius: 30px;
+        border: none;
+        outline: none;
+      }
+      .signUp-link {
+        font-size: 14px;
+        margin: 15px 0;
+        text-align: center;
+        p {
+          color: #fff;
+          a {
+            color: #0ef;
+            text-decoration: none;
+            font-weight: 500;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// HOME SECTION UCHUN STILLAR
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .home-img {
+    img {
+      width: 35vw;
+      border-radius: 40px;
+      height: 400px;
+      box-shadow: 0 0 50px var(--main-color);
+    }
+  }
+  .home-content {
+    width: 45vw;
+    h3 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      &:nth-of-type(2) {
+        margin-bottom: 2rem;
+      }
+      span {
+        color: var(--main-color);
+      }
+    }
+    h1 {
+      font-size: 5.6rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    p {
+      font-size: 1.6rem;
+    }
+    .social-media {
+      a {
+        text-decoration: none;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 4rem;
+        height: 4rem;
+        background: transparent;
+        border: 0.2rem solid var(--main-color);
+        border-radius: 50%;
+        font-size: 2rem;
+        color: var(--main-color);
+        margin: 3rem 1.5rem 3rem 0;
+        transition: 0.5s ease;
+        &:hover {
+          background: var(--main-color);
+          color: var(--second-bg-color);
+          box-shadow: 0 0 1rem var(--main-color);
+        }
+      }
+    }
+    .btn {
+      display: inline-block;
+      padding: 1rem 2.8rem;
+      background: var(--main-color);
+      border-radius: 4rem;
+      box-shadow: 0 0 1rem var(--main-color);
+      font-size: 1.6rem;
+      color: var(--second-bg-color);
+      letter-spacing: 0.1rem;
+      font-weight: 600;
+      &:hover {
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+  .about-img {
+    img {
+      width: 35vw;
+      border-radius: 40px;
+      height: 400px;
+      box-shadow: 0 0 50px var(--main-color);
+    }
+  }
+  .about-content {
+    width: 45vw;
+    .heading {
+      // text-align: center;
+    }
+    h3 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      &:nth-of-type(2) {
+        margin-bottom: 2rem;
+      }
+      span {
+        color: var(--main-color);
+      }
+    }
+    h2 {
+      font-size: 4.5rem;
+      font-weight: 700;
+      line-height: 1.3;
+      text-align: left;
+    }
+    p {
+      font-size: 1.6rem;
+      margin: 2rem 0 3rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 1rem 2.8rem;
+      background: var(--main-color);
+      border-radius: 4rem;
+      box-shadow: 0 0 1rem var(--main-color);
+      font-size: 1.6rem;
+      color: var(--second-bg-color);
+      letter-spacing: 0.1rem;
+      font-weight: 600;
+      &:hover {
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+// ABOUT PAGE UCHUN STILLAR
+
+.about-contents {
+  display: grid;
+  margin-top: 180px;
+  grid-template-columns: 2fr 5fr;
+  grid-template-areas:
+    "imageSect infoSect "
+    "skillSect skillSect";
+  grid-gap: 70px;
+  .img-section {
+    grid-area: imageSect;
+    position: relative;
+    min-width: 300px;
+    height: 350px;
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      outline: 3px solid #787cb5;
+      top: 15px;
+      left: 15px;
+      z-index: 1;
+    }
+    img {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .info-section {
+    grid-area: infoSect;
+    h1 {
+      color: #dedce1;
+      font-size: 30px;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 5px;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        top: 110%;
+        left: 0;
+        background-color: var(--main-color);
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        width: 40%;
+        height: 3px;
+        top: calc(110% - 1px);
+        left: 0;
+        background-color: #787cb5;
+      }
+    }
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #787cb5;
+      padding: 14px 0 15px;
+      text-transform: capitalize;
+      letter-spacing: 1px;
+    }
+    p {
+      color: #aaabb0;
+      font-size: 18px;
+      line-height: 1.2;
+      text-align: justify;
+      padding-bottom: 8px;
+    }
+    .personal-info {
+      display: grid;
+      grid-template-columns: repeat(1fr 1fr);
+      grid-gap: 10px 20px;
+      margin-top: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #555;
+      div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        span {
+          color: #aaabb0;
+          letter-spacing: 1px;
+          font-size: 15px;
+        }
+      }
+    }
+    button {
+      min-width: 150;
+      padding: 8px 18px;
+      border: 1px solid #787cb5;
+      border-radius: 25px;
+      font-size: 18px;
+      background-color: #2b2a2f;
+      color: #aaabb0;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.4s;
+      margin-top: 20px;
+      &:hover {
+        color: #787cb5;
+        border-color: #aaabb0;
+      }
+    }
+  }
+}
+
+.skillsSection {
+  grid-area: skillSect;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px 80px;
+  margin-top: 50px;
+  .subject {
+    font-size: 17px;
+    font-weight: thin;
+    color: #aaabb0;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+  .skills {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .progress_bar {
+      position: absolute;
+      left: 120px;
+    }
+  }
+}
+
+.ant-progress.ant-progress-circle .ant-progress-text {
+  color: #0ef;
+}
+
+// USER ROLE UCUN STILLAR
+.user-role-card {
+  margin: 100px auto;
+  width: 500px;
+  height: 400px;
+  box-shadow: 0 0 50px #0ef;
+  border-radius: 20px;
+  padding: 60px 40px;
+  p {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  span {
+    color: var(--main-color);
+    font-size: 15px;
+  }
+}
+.userLogout {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+}
+// INFORMATION UCHUN STILLAR
+
+.tabs {
+  margin-top: 80px;
+  caret-color: #fff;
+}
+.formInfo {
+  width: 100%;
+  input {
+    background: transparent;
+    border: 1px solid #0ef;
+    color: #fff;
+  }
+  TextArea {
+    background: transparent;
+    border: 1px solid #0ef;
+    color: #fff;
+  }
+}
+.uploadImg {
+  width: 80px;
+  object-fit: cover;
+  height: 100px;
+  border-radius: 80px;
+}
+// EXPERIENCES UCHUN STILLAR
+
+.ant-table-wrapper .ant-table-thead > tr > th {
+  background-color: var(--second-bg-color);
+  color: #0ef;
+  border-bottom: 2px solid wheat;
+  text-align: center;
+}
+.ant-table-tbody > tr > td {
+  background-color: var(--second-bg-color);
+  color: rgb(192, 190, 190);
+  text-align: center;
+}
+
+.ant-pagination .ant-pagination-disabled .ant-pagination-item-link {
+  color: #0ef;
+}
+.ant-pagination .ant-pagination-item-active {
+  color: #0ef;
+  background-color: transparent;
+}
+.ant-table-wrapper .ant-table-tbody > tr > td {
+  border-bottom: none;
+}
+.ant-table-wrapper .ant-table-tbody > tr.ant-table-row {
+  &:hover > td {
+    background: var(--second-bg-color);
+  }
+}
+.ant-table-wrapper .ant-table {
+  background: transparent;
+}
+// MESSAGES PAGE UCHUN STILLLAR
+.message_tab {
+  margin-top: 80px;
+}
+.unanswer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  position: relative;
+  top: 50px;
+  margin: 0 auto;
+  width: 75vw;
+  height: auto;
+  background-color: #000;
+  box-shadow: 0 0 50px #0ef;
+  border-radius: 20px;
+  padding: 40px;
+  overflow: hidden;
+  color: #fff;
+
+  .box {
+    width: 300px;
+    height: auto;
+    text-align: center;
+    border: 1px solid var(--main-color);
+    padding: 40px;
+    border-radius: 20px;
+    &:hover {
+      animation: animate 1s linear infinite;
+    }
+    :nth-child(1) {
+      font-size: 35px;
+      font-weight: 600;
+      padding-bottom: 15px;
+      color: var(--main-color);
+    }
+    :nth-child(2) {
+      font-size: 20px;
+      color: var(--main-color);
+      text-align: center;
+    }
+    :nth-child(3) {
+      font-size: 18px;
+      text-align: center;
+      padding-top: 20px;
+      padding-bottom: 15px;
+    }
+    :nth-child(5) {
+      padding-top: 10px;
+    }
+    .text {
+      font-size: 12px;
+      color: #fff;
+      padding-left: 5px;
+      font-weight: 400;
+    }
+  }
+}
+.loading-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.ant-upload-wrapper.ant-upload-picture-card-wrapper
+  .ant-upload.ant-upload-select {
+  position: relative;
+  left: 200px;
+}
+
+// EXPERIENCES PAGE UCHUN STILLAR
+
+.services h2{
+  margin-bottom: 5rem;
+  text-align: center;
+  font-size: 30px;
+  color: #fff;
+}
+.services-container{
+  display: flex;justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+
+  .services-box{
+    flex: 1 1 30rem;
+    background: var(--second-bg-color);
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: .2rem solid var(--bg-color);
+    transition: .5s ease;
+    i{
+      font-size: 7rem;
+      color: var(--main-color);
+    }
+    &:hover{
+      border-color: var(--main-color);
+      transform: scale(1.02);
+    }
+    h3{
+      font-size: 2.6rem;
+    }
+    h4{
+      margin-top: 2.1rem;
+    }
+    p{
+      font-size: 1.6rem;
+      margin: 1rem 0 3rem;
+    }
+    button{
+      display: inline-block;
+      padding: 1rem 2.8rem;
+      background: var(--main-color);
+      border-radius: 4rem;
+      box-shadow: 0 0 1rem var(--main-color);
+      font-size: 1.6rem;
+      color: var(--second-bg-color);
+      letter-spacing: 0.1rem;
+      font-weight: 600;
+      &:hover {
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+// PORTFOLIOS UCHUN STILLAR 
+
+.portfolio{
+  h2{
+    margin-bottom: 4rem;
+    text-align: center;
+    font-size: 3.2rem;
+    font-weight: 700;
+    &:nth-of-type(2) {
+      margin-bottom: 2rem;
+    }
+    span {
+      color: var(--main-color);
+    }
+  }
+  .portfolio-container{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+gap: 2.5rem;
+.portfolio-box{
+  position: relative;
+  border-radius: 2rem;
+  box-shadow: 0 0 1rem var(--bg-color);
+  overflow: hidden;
+  display: flex;
+  width: 350px;
+  height: 350px;
+  img{
+    width: 400px;
+    transition: .5s ease;
+  }
+  .porfolio-layer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, .1),var(--main-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 4rem;
+    transform: translateY(100%);
+    transition: .5s ease;
+    h4{
+      font-size: 3rem;
+    }
+    p{
+      font-size: 1.6rem;
+      margin: .3rem 0 1rem;
+    }
+    a{
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 5rem;
+      height: 5rem;
+      background: var(--text-color);
+      border-radius: 50%;
+      i{
+        font-size: 2rem;
+        color: var(--second-bg-color);
+      }
+    }
+  }
+}
+.portfolio-box:hover img{
+  transform: scale(1.1);
+}
+.portfolio-box:hover .porfolio-layer{
+  transform: translateY(0);
+}
+  }
+}
+
+
+
+
+
+
+
+// CONTACT PAGE UCHUN STILAR
+
+.contact{
+  h2{
+
+    margin-bottom: 3rem;
+    text-align: center;
+    font-size: 3.2rem;
+    font-weight: 700;
+    &:nth-of-type(2) {
+      margin-bottom: 2rem;
+    }
+    span {
+      color: var(--main-color);
+    }
+  }
+
+  form{
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+    .input-box{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      input{
+        width: 100%;
+        padding: 1.5rem;
+        font-size: 1.6rem;
+        color: var(--text-color);
+        background: var(--second-bg-color);
+        border-radius: .8rem;
+        margin: .7rem 0;
+      }
+     
+    
+    }
+    .btn{
+      margin-top: 2rem;
+      cursor: pointer;
+      display: inline-block;
+      padding: 1rem 2.8rem;
+      background: var(--main-color);
+      border-radius: 4rem;
+      box-shadow: 0 0 1rem var(--main-color);
+      font-size: 1.6rem;
+      color: var(--second-bg-color);
+      letter-spacing: 0.1rem;
+      font-weight: 600;
+      &:hover {
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 1068px) {
+  .about-contents {
+    grid-template-areas:
+      "imageSect skillSect"
+      "infoSect infoSect";
+  }
+  .skillsSection {
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+}
+
+
+@media (max-width: 868px) {
+  .about-contents {
+    grid-template-areas:
+      "imageSect imageSect"
+      "infoSect infoSect"
+      "skillSect skillSect";
+  }
+  
+}
+
+@media(max-width:668px){
+  .personal-info{
+    grid-template-columns: 1fr;
+  }
+}
+
+@keyframes animate {
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}

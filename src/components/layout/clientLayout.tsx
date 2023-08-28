@@ -64,7 +64,7 @@ const ClientLayout = () => {
       <Layout>
         <Sider trigger={null} collapsible collapsed={collapsed}>
           <Menu
-            className="menu"
+            className="menu "
             theme="dark"
             mode="inline"
             selectedKeys={[key]}
@@ -91,8 +91,8 @@ const ClientLayout = () => {
                 key: "/partfolios",
                 icon: <FilePdfFilled />,
                 label: <Link to="/client/partfolios">Parfolios</Link>,
-              }, 
-               {
+              },
+              {
                 key: "/home",
                 icon: <FilePdfFilled />,
                 label: <Link to="/home">My Portfolios Site</Link>,
@@ -136,7 +136,7 @@ const ClientLayout = () => {
                   height: 64,
                 }}
               />
-              <div className="d-flex justify-content-end">
+              <div className="d-flex justify-content-end  ">
                 <Link to="/client/message">
                   <Avatar
                     className="mx-4 "
@@ -155,6 +155,8 @@ const ClientLayout = () => {
                     icon={<UserOutlined />}
                   />
                 </Link>
+                <p className=" d-flex userId">User id :{Cookies.get(ID)}</p>
+
               </div>
             </Header>
           </div>
@@ -167,8 +169,6 @@ const ClientLayout = () => {
               background: "#323946",
             }}
           >
-            <p className=" d-flex userId">User id :{Cookies.get(ID)}</p>
-
             <Outlet />
           </Content>
         </Layout>

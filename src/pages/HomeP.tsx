@@ -30,17 +30,20 @@ type FieldType = {
 
 const HomeP = () => {
  const [user, setUser] = useState<FieldType | null>(null);
-
+//  const [loading, setLoading] = useState<boolean>(false);
 
   const getData = useCallback(async () => {
     try {
+      // setLoading(true)
       const response = await request.get<FieldType>("auth/me");
       const data = response.data;
 
       setUser(data);
     } catch (error) {
       console.error(error);
-    } 
+    } finally{
+      // setLoading(false)
+    }
   }, []);
 
   useEffect(() => {
@@ -49,7 +52,7 @@ const HomeP = () => {
 
   return (
     <>
-      <section className="home container" id="home">
+     <section className="home container" id="home">
         <div className="home-content ">
           <h3>Hello, It's Me</h3>
           <h1>{user?.firstName+ " "+user?.lastName}</h1>
@@ -78,13 +81,13 @@ const HomeP = () => {
           </a>
         </div>
         <div className="home-img img-fluid">
-          <img src="/public/user.jpg" alt="" />
+          <img src="https://images.unsplash.com/photo-1693000911292-e0902cefb402?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" alt="" />
         </div>
       </section>
 
       <section className="about" id="about">
         <div className="about-img">
-          <img src="/public/user.jpg" alt="" />
+          <img src="https://images.unsplash.com/photo-1693000911292-e0902cefb402?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" alt="" />
         </div>
         <div className="about-content">
             <h2 className="heading">About <span>Me</span></h2>

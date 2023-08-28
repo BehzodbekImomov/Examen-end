@@ -742,6 +742,10 @@ gap: 2.5rem;
     grid-template-columns: 1fr;
     grid-gap: 20px;
   }
+  .unanswer{
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 15px;
+  }
 }
 
 
@@ -752,12 +756,46 @@ gap: 2.5rem;
       "infoSect infoSect"
       "skillSect skillSect";
   }
-  
+  .unanswer{
+    grid-template-columns: repeat(1,1fr);
+    grid-gap: 15px;
+    .box{
+      width: 200px;
+      padding: 20px;
+      :nth-child(1){
+        font-size: 25px;
+      }
+      :nth-child(2){
+        font-size: 12px;
+      }
+      :nth-child(5){
+        font-size: 12px;
+      }
+      .text{
+        font-size: 10.5px;
+      }
+    }
+  }
+  .formInfo {
+ margin: 0 auto;
+
+  input {
+    width: auto;
+   
+  }
+  TextArea{
+    width: auto;
+  }
+}
+.skillsSection{
+  margin-bottom: 30px;
+}
 }
 
 @media(max-width:668px){
   .personal-info{
     grid-template-columns: 1fr;
+    
   }
 }
 

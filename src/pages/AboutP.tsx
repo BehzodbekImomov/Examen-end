@@ -75,7 +75,7 @@ const AboutP: React.FC = () => {
     <div className="container">
       <div className="about-contents">
         <div className="img-section">
-          <img src="/public/user.jpg" alt="" />
+          <img src="https://images.unsplash.com/photo-1563206767-5b18f218e8de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="" />
         </div>
 
         <div className="info-section">

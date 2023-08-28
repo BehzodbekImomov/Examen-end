@@ -1,5 +1,6 @@
-import React, { useState, useEffect, ChangeEvent, FormEvent } from "react";
+import React, { useState, ChangeEvent, FormEvent } from "react";
 import { request } from "../request";
+import { message } from "antd";
 
 interface InputValues {
   title: string;
@@ -16,25 +17,27 @@ const ContactP: React.FC = () => {
     whom: "",
   });
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = event.target;
-    setInputValue((prevInputValue) => ({ ...prevInputValue, [name]: value }));
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setInputValue({ ...inputValue, [e.target.name]: e.target.value });
   };
 
-  useEffect(() => {
-    const postData = async () => {
-      try {
-        await request.post("message", inputValue);
-      } catch (err) {
-        console.log(err);
-      }
-    };
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    try {
 
-    postData();
-  }, [inputValue]);
-
-  const handleSubmit = async (event: FormEvent) => {
-    event.preventDefault();
+     
+      const data = await request.post("messages", inputValue);
+message.success('Successfull')
+      setInputValue({   title: "",
+      user: "",
+      message: "",
+      whom: "",})
+      console.log(data);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -87,7 +90,7 @@ const ContactP: React.FC = () => {
           cols={30}
           rows={10}
         ></textarea>
-        <button type="submit" value="" className="btn">
+        <button type="submit" className="btn">
           Send Message
         </button>
       </form>

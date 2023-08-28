@@ -94,17 +94,16 @@ color: #fff;
 
 @media (max-width:991px){
  .header{
-  padding: 2rem 3%;
+  padding: 0rem 3%;
  }
  section{
   padding: 10rem 3% 2rem;
+  margin-top: 2rem;
  }
  .footer{
   padding: 2rem 3%;
  }
- /* .navbar{
-  display: none;
-} */
+
 }
 
 

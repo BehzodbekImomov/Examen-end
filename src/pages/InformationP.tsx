@@ -302,8 +302,8 @@ const Info: React.FC = () => {
               <Input />
             </Form.Item>
 
-            <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-              <Button loading={loading} type="primary" htmlType="submit">
+            <Form.Item >
+              <Button  loading={loading} type="primary" htmlType="submit">
                 Submit
               </Button>
             </Form.Item>
@@ -342,7 +342,7 @@ const Pass = () => {
   };
 
   return (
-    <Form
+    <Form 
       form={form}
       layout="vertical"
       autoComplete="off"

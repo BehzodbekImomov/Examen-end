@@ -16,7 +16,6 @@ import Cookies from "js-cookie";
 
 import { ID } from "../constants";
 import { useForm } from "antd/es/form/Form";
-// import { RcFile, UploadChangeParam, UploadFile } from "antd/es/upload";
 import { getImage } from "../utils/getImage";
 import TextArea from "antd/es/input/TextArea";
 import { AnyObject } from "antd/es/_util/type";
@@ -30,15 +29,15 @@ interface DataSourceItem {
   key?: string | undefined;
 }
 interface Photo {
-  _id: string; 
-  name:string
+  _id: string;
+  name: string;
 }
 
 const PortfoliosP = () => {
   const id = Cookies.get(ID);
   const [exp, setExp] = useState([] as DataSourceItem[]);
   const [selected, setSelected] = useState<string | null>(null);
-  const [photo, setPhoto] = useState<Photo|null>(null);
+  const [photo, setPhoto] = useState<Photo | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [form] = useForm();
@@ -168,7 +167,7 @@ const PortfoliosP = () => {
     }
   };
 
-  const handleChange = async (e:AnyObject) => {
+  const handleChange = async (e: AnyObject) => {
     try {
       const formData = new FormData();
       formData.append("file", e.file.originFileObj);
@@ -206,7 +205,7 @@ const PortfoliosP = () => {
       <Modal
         title="Basic Modal"
         open={isModalOpen}
-        okText={selected ? "Save experiences" : "Add"}
+        okText={selected ? "Save portfolios" : "Add"}
         onOk={handleOk}
         onCancel={handleCancel}
       >
@@ -245,7 +244,9 @@ const PortfoliosP = () => {
           <Form.Item<DataSourceItem>
             label=" Name"
             name="name"
-            rules={[{ required: true, message: "Please input your username!" }]}
+            rules={[
+              { required: true, message: "Please enter your workplace !" },
+            ]}
           >
             <Input placeholder="Najot Ta'lim" />
           </Form.Item>
@@ -253,9 +254,11 @@ const PortfoliosP = () => {
           <Form.Item<DataSourceItem>
             label="Url"
             name="url"
-            rules={[{ required: true, message: "Please input your password!" }]}
+            rules={[
+              { required: true, message: "Please enter your portfolio!" },
+            ]}
           >
-            <Input placeholder="Devoloper" />
+            <Input placeholder=" Enter your portfolio" />
           </Form.Item>
 
           <Form.Item<DataSourceItem>

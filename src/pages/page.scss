@@ -414,6 +414,8 @@
 }
 .formInfo {
   width: 100%;
+
+
   input {
     background: transparent;
     border: 1px solid #0ef;
@@ -470,6 +472,7 @@
 .unanswer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
   position: relative;
   top: 50px;
   margin: 0 auto;

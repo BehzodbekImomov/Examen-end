@@ -21,6 +21,8 @@ const RegisterP = () => {
 
     const registerSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
+        
+        
         };
 
         const wrapper = document.querySelector(".wrapper");

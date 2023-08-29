@@ -35,10 +35,16 @@ export const useAuth = create<AuthTypes>((set) => ({
   },
   register: async (userRegister, navigate) => {
     try {
-      const res = await request.post("auth/register", userRegister);
-      console.log(res);
+      const res= await request.post("auth/register", userRegister);
       message.success("Registration completed successfully");
-      navigate("/");
+   console.log(res);
+   
+      Cookies.set(TOKEN, res.data.token);
+      Cookies.set(ROLE, res.data.user.role);
+      Cookies.set(ID, res.data.user._id);
+      set({ isAuthenticated: true, role: res.data.user.role });
+      const role = res.data.user.role;
+      navigate(role === "admin" ? "/dashboard" : "/client");
     } catch (err) {
       message.error("Registration failed");
     }

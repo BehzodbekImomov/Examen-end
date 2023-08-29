@@ -108,7 +108,7 @@ const AboutP: React.FC = () => {
           {skills.map((e) => (
             <div key={e._id} className="skill">
               <div className="subject">{e.name}</div>
-              <Space style={{ marginLeft: "230px", marginTop: "30px" }}>
+              <Space style={{ marginLeft: "230px", marginTop: "30px",marginBottom:"40px" }}>
                 <Progress
                   className="progres"
                   type="circle"

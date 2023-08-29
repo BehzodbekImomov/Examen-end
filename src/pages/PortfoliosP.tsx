@@ -248,7 +248,7 @@ const PortfoliosP = () => {
               { required: true, message: "Please enter your workplace !" },
             ]}
           >
-            <Input placeholder="Najot Ta'lim" />
+            <Input placeholder="E-commerce" />
           </Form.Item>
 
           <Form.Item<DataSourceItem>

@@ -38,12 +38,12 @@ function App() {
         {isAuthenticated && role === "client" && (
          <>
          <Route path="/client" element={<ClientLayout/>}>
+           <Route path="message" element={<MessagesP/>}/>
            <Route path="information" element={<InformationP/>}/>
            <Route path="experiences" element={<ExperiencesP/>}/>
            <Route path="skills" element={<SkillsP/>}/>
            <Route path="education" element={<EducationP/>}/>
            <Route path="partfolios" element={<PortfoliosP/>}/>
-           <Route path="message" element={<MessagesP/>}/>
          </Route>
          
          </>

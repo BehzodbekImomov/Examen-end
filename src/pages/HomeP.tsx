@@ -6,6 +6,7 @@ import { request } from "../request";
 import ServicesP from "./ServicesP";
 import PortfoliosConP from "./PortfoliosConP";
 import ContactP from "./ContactP";
+import AboutP from "./AboutP";
 
 type FieldType = {
   username?: string | undefined;
@@ -93,9 +94,10 @@ const HomeP = () => {
             <h2 className="heading">About <span>Me</span></h2>
             <h3>Frontend Devoloper</h3>
             <p>{user?.info}</p>
-            <Link className="btn" to="/about">Read more</Link>
+            <Link className="btn" to="#">Read more</Link>
         </div>
       </section>
+      <AboutP/>
       <ServicesP/>
       <PortfoliosConP/>
       <ContactP/>

@@ -192,7 +192,7 @@ const PortfoliosP = () => {
             }}
           >
             <h1 style={{ color: "white" }}>My Portfolios</h1>
-            <Button type="primary" onClick={addCategory}>
+            <Button loading={loading} type="primary" onClick={addCategory}>
               Add
             </Button>
           </div>

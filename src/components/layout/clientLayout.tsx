@@ -39,14 +39,14 @@ const ClientLayout = () => {
   const navigate = useNavigate();
   const [collapsed, setCollapsed] = useState(false);
   const [message, setMessage] = useState([]);
-
+const id=Cookies.get(ID)
   useEffect(() => {
     getUnAnswermessage();
   }, []);
 
   async function getUnAnswermessage() {
     try {
-      const res = await request.get("messages?whom[in]");
+      const res = await request.get(`messages?whom[in]=${id}`);
       let data = res?.data?.data;
       setMessage(data);
 

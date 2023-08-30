@@ -1,6 +1,8 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import { request } from "../request";
 import { message } from "antd";
+import { ID } from "../constants";
+import Cookies from "js-cookie";
 
 interface InputValues {
   title: string;
@@ -10,11 +12,12 @@ interface InputValues {
 }
 
 const ContactP: React.FC = () => {
+  const id=Cookies.get(ID)
   const [inputValue, setInputValue] = useState<InputValues>({
     title: "",
     user: "",
     message: "",
-    whom: "",
+    whom: `${id}`,
   });
 
   const handleChange = (
@@ -62,13 +65,7 @@ message.success('Successfull')
             type="email"
             placeholder="Email Address"
           />
-          <input
-            value={inputValue.whom}
-            name="whom"
-            onChange={handleChange}
-            type="text"
-            placeholder="User id"
-          />
+        
         </div>
 
         <textarea
